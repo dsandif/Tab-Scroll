@@ -1,0 +1,48 @@
+body {
+    width: 500px;
+    margin: 0px 0px 0px 0px;
+}
+
+#tabList{
+    color: #666;
+    font-size: 15px;
+    font-weight: bold;
+    max-height: 400px;
+    padding: 15px 0px 0px 0px;
+}
+
+.active{
+	background: dodgerblue !important;
+    color: white !important;
+    padding: 20px 0px 10px 10px !important;
+}
+
+.item{
+	padding: 10px 0px 10px 10px;
+	max-height: 18px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.item:hover { 
+  background-color: aliceblue;
+  text-decoration: underline;
+  cursor: pointer!important;
+}
+.active:hover{
+	background: dodgerblue !important;
+    color: white !important;
+    padding: 20px 0px 10px 10px !important;
+    text-decoration: none !important;
+}
+.header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    color: white;
+    background: dodgerBlue;
+    text-decoration: underline;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
