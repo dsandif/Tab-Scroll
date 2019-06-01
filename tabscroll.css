@@ -2,46 +2,60 @@ body {
     width: 500px;
     margin: 0px 0px 0px 0px;
 }
-
-#tabList{
-    color: #666;
-    font-size: 15px;
-    font-weight: bold;
-    max-height: 400px;
-    padding: 15px 0px 0px 0px;
+.wrapper{
+    padding: 0px 10px 0px 10px;
+    background-color: #edf6ff;
 }
-
+#tabList{
+    color: #888;
+    font-size: 15px;
+    max-height: 400px;
+    padding: 35px 0px 0px 0px;
+}
+.ts-icon{
+    height: 20px;
+    vertical-align: text-top;
+    margin-right: 5px;
+}
 .active{
-	background: dodgerblue !important;
-    color: white !important;
-    padding: 20px 0px 10px 10px !important;
+    padding: 0px 0px 10px 0px !important;
+    max-height: initial;
+}
+.wrapper >p{
+    margin: 0;
+    font-size: 11px;
+    color: steelblue;
+    font-weight: bold;
 }
 
 .item{
-	padding: 10px 0px 10px 10px;
+	padding: 10px 0px 10px 0px;
 	max-height: 18px;
 	text-overflow: ellipsis;
 	overflow: hidden;
 	white-space: nowrap;
+    border-bottom: 1px solid lightsteelblue;
 }
 .item:hover { 
-  background-color: aliceblue;
   text-decoration: underline;
   cursor: pointer!important;
 }
-.active:hover{
-	background: dodgerblue !important;
-    color: white !important;
-    padding: 20px 0px 10px 10px !important;
-    text-decoration: none !important;
+.wrapper:hover{
+	background: #cfe4ff !important;
+    color: inherit;
+    padding: 0px 10px 0px 10px;
+}
+
+.wrapper > .active{
+    max-height: initial;  
 }
 .header{
     position: fixed;
     top: 0;
     width: 100%;
-    color: white;
-    background: dodgerBlue;
-    text-decoration: underline;
+    color: aliceblue;
+    background: #005eb9;
+    /*background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(0,74,215,1) 0%, rgba(30,144,255,1) 67%);*/
     text-align: center;
     padding-top: 10px;
     padding-bottom: 5px;

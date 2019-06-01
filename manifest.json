@@ -4,7 +4,7 @@
   "short_name": "Tab Scroll",
   "description": "A lightning fast way to scroll through Chrome Tabs.",
   "author": "Darien Sandifer",
-  "version": "1.0",
+  "version": "1.1",
   "offline_enabled": true,
   "current_locale": "en",
   "browser_action": {
