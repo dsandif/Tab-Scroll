@@ -1,21 +1,12 @@
 var tabID = null
 var windowID = null
 var cmdActive = false
-var savedHeader = createHeader()
 var savedTab = null
 var items = []
 
 document.addEventListener("DOMContentLoaded", function(event) {
 	getResults()
 });
-
-
-function createHeader() {
-	var header = document.createElement("div");
-	header.innerHTML = `Tab Scroll`;
-	header.classList.add('header')
-	return header;
-}
 
 function getResults(){
 	chrome.tabs.query({currentWindow: true}, function (tabs) {
@@ -30,6 +21,9 @@ function showResults(tabs) {
 		return (a.active === b.active)? 0 : a? -1 : 1;
 	}).forEach(function(tab,index) {
 		var listItem = document.createElement("div"); // we want a DIV element instead of LI
+		const wrapper  = document.createElement('div')
+		wrapper.classList.add('wrapper')
+		wrapper.appendChild(listItem)
 		listItem.innerHTML = `${tab.title}`;
 		listItem.classList.add('item');
 		listItem.addEventListener('click', function() {
@@ -39,19 +33,21 @@ function showResults(tabs) {
 
 		if(tab.active){
 			listItem.classList.add('active')
-			savedTab = listItem	
+			const activeHeading = document.createElement('p')
+			activeHeading.innerHTML = '.::Current Tab::.'
+			wrapper.appendChild(activeHeading)
+			wrapper.appendChild(listItem)
+			savedTab = wrapper
 		}
 
-		items.push(listItem)
+		items.push(wrapper)
 
 	   	if(index === tabs.length - 1){
-	   		resultsElement.appendChild(savedHeader);
 			resultsElement.appendChild(savedTab);
 
 	   		items.forEach(function(tab,index) {
 	   			if(savedTab === tab ){return;}
 
-	   			console.log(tab,index)
 	   			resultsElement.appendChild(tab);
 	   		})
 	   	}
